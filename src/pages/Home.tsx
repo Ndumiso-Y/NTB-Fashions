@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Hero from "../components/sections/Hero";
 import SignatureCategories from "../components/sections/SignatureCategories";
 import BrandStatement from "../components/sections/BrandStatement";
@@ -10,10 +10,6 @@ import EcommerceTeaser from "../components/sections/EcommerceTeaser";
 import FinalCTA from "../components/sections/FinalCTA";
 
 export const Home: React.FC = () => {
-  // Update document title for SEO
-  useEffect(() => {
-    document.title = "NTB Fashions | Bespoke African Fashion & Custom Event Wear";
-  }, []);
 
   return (
     <div className="w-full">

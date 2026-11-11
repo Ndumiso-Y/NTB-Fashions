@@ -7,6 +7,7 @@ interface SectionHeaderProps {
   align?: "center" | "left";
   className?: string;
   light?: boolean;
+  as?: "h1" | "h2";
 }
 
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
@@ -16,6 +17,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   align = "center",
   className = "",
   light = false,
+  as: Heading = "h2",
 }) => {
   const isCenter = align === "center";
   
@@ -31,13 +33,13 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
         </span>
       )}
       
-      <h2
+      <Heading
         className={`font-serif text-3xl md:text-4xl lg:text-5xl leading-tight font-medium ${
           light ? "text-brand-bg" : "text-brand-black"
         }`}
       >
         {title}
-      </h2>
+      </Heading>
 
       {/* Decorative luxury hairline accent */}
       <div

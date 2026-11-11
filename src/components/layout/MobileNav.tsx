@@ -106,7 +106,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           <div className="flex flex-col gap-3 text-xs text-brand-muted">
             <div className="flex items-center gap-3">
               <Mail size={14} className="text-brand-gold" />
-              <span>{brandDetails.contact.emailPlaceholder}</span>
+              <span>{brandDetails.contact.email}</span>
             </div>
             <div className="flex items-center gap-3">
               <MapPin size={14} className="text-brand-gold" />

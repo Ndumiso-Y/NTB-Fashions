@@ -24,7 +24,7 @@ export const occasions: OccasionInfo[] = [
     avatarTitle: "The Matric Dance Diva",
     tagline: "A once-in-a-lifetime statement gown made for glamour, memory, and confidence.",
     description: "Make an entrance everyone will remember. From dramatic silhouettes to sleek custom modern cuts, we tailor your dream dress to fit you flawlessly, giving you confidence and content that shines on social media.",
-    image: "/images/ntb/generated/matric-dance-dress-visual.png",
+    image: "/images/ntb/generated/matric-dance-dress-visual.webp",
     ctaText: "Book Matric Dress Consultation",
   },
   {
@@ -33,7 +33,7 @@ export const occasions: OccasionInfo[] = [
     avatarTitle: "The Cultural Pride Professional",
     tagline: "Representing heritage with high-fashion sophistication and modern custom tailoring.",
     description: "Honor your heritage with pride. We combine authentic textures, patterns, and symbols with modern silhouettes to design traditional skirts, dresses, and matching sets perfect for Lobola celebrations, Umabo, or cultural heritage events.",
-    image: "/images/ntb/generated/traditional-wear-visual.png",
+    image: "/images/ntb/generated/traditional-wear-visual.webp",
     ctaText: "Book Traditional Wear Consultation",
   },
   {

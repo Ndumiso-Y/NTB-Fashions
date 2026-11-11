@@ -1,24 +1,39 @@
+const WHATSAPP_NUMBER = "27723400477";
+
+export const whatsappUrl = (message: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
 export const brandDetails = {
-  name: "NTB Fashions",
-  expressionName: "Ntombis",
+  name: "Ntombis Fashion",
+  shortName: "Ntombis",
+  monogram: "NTB",
   domain: "www.ntombis.com",
+  siteUrl: "https://www.ntombis.com",
   tagline: "Bespoke African Fashion for Unforgettable Moments",
   positioning: "African-Inspired Bespoke Event Wear",
-  subtext: "NTB Fashions creates custom wedding attire, matric dance dresses, traditional wear, suits, and event garments designed around your story, body, culture, and occasion.",
-  brandStatement: "NTB Fashions creates bespoke garments for people who want to look distinct, feel confident, and carry their identity into every occasion.",
+  subtext: "Ntombis Fashion creates custom wedding attire, matric dance dresses, traditional wear, suits, and event garments designed around your story, body, culture, and occasion.",
+  brandStatement: "Ntombis Fashion creates bespoke garments for people who want to look distinct, feel confident, and carry their identity into every occasion.",
   differentiator: "We do not design for the rack. We design for the person, the moment, and the meaning behind it.",
-  
-  // Placed contact info as requested (do not invent real details)
+
   contact: {
-    phonePlaceholder: "Add official WhatsApp number here",
-    emailPlaceholder: "Add official email here",
-    location: "South Africa",
-    whatsappLink: "https://wa.me/27000000000?text=Hi%20Ntombis%20Fashions,%20I'd%20like%20to%20enquire%20about%20a%20custom%20garment.",
+    phoneDisplay: "072 340 0477",
+    phoneIntl: "+27723400477",
+    whatsappNumber: WHATSAPP_NUMBER,
+    email: "info@ntombis.com",
+    street: "121 President Mbeki Drive",
+    city: "Rustenburg",
+    province: "North West",
+    postcode: "0299",
+    location: "121 President Mbeki Drive, Rustenburg, North West",
+    hours: [
+      { days: "Monday – Friday", time: "09:00 – 17:00" },
+      { days: "Saturday", time: "09:00 – 14:00" },
+      { days: "Sunday", time: "Closed" },
+    ],
+    whatsappLink: whatsappUrl("Hi Ntombis Fashion, I'd like to enquire about a custom garment."),
   },
-  
+
   socials: {
-    instagram: "https://instagram.com/ntb_fashions",
-    facebook: "https://facebook.com/ntbfashions",
-    pinterest: "https://pinterest.com/ntbfashions",
-  }
+    facebook: "https://www.facebook.com/ntombisfashion",
+  },
 };

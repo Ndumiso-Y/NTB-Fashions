@@ -32,7 +32,7 @@ export const EcommerceTeaser: React.FC = () => {
         <div className="lg:col-span-5 relative h-[380px] md:h-[450px] overflow-hidden bg-brand-bg-secondary border border-brand-gold/25 p-2 shrink-0">
           <img
             src={garmentImages.maxhosa.src}
-            alt="Ready-to-wear knit capsule teaser by NTB Fashions"
+            alt="Ready-to-wear knit capsule teaser by Ntombis Fashion"
             loading="lazy"
             className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-[1000ms]"
           />

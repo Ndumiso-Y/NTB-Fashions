@@ -47,7 +47,7 @@ export const WhyChooseUs: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         
         <SectionHeader
-          title="What Defines NTB Fashions"
+          title="What Defines Ntombis Fashion"
           subtitle="Our Standards"
           description="We do not compromise on fabric quality, structural integrity, or identity. Here is why clients trust us with their milestone moments."
         />

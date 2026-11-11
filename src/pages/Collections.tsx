@@ -1,13 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SectionHeader from "../components/ui/SectionHeader";
 import ImageCard from "../components/ui/ImageCard";
 import Button from "../components/ui/Button";
 import { collections } from "../data/collections";
 
 export const Collections: React.FC = () => {
-  useEffect(() => {
-    document.title = "Our Collections | NTB Fashions";
-  }, []);
 
   return (
     <div className="pt-24 bg-brand-bg min-h-screen">
@@ -15,6 +12,7 @@ export const Collections: React.FC = () => {
       <section className="py-16 border-b border-brand-gold/10 bg-brand-bg-secondary/10">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <SectionHeader
+            as="h1"
             title="Signature Collections"
             subtitle="Explore Our Style"
             description="Discover our diverse ranges of custom-made event wear, tailored suits, and modern traditional garments designed to carry cultural identity and confidence."

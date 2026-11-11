@@ -10,7 +10,7 @@ export const BrandStatement: React.FC = () => {
       <div className="absolute top-0 bottom-0 right-[10%] w-[1px] bg-brand-bg-secondary/5 hidden md:block" />
       
       <div className="absolute left-[5%] top-1/2 -translate-y-1/2 opacity-2 text-[120px] font-serif font-black select-none pointer-events-none text-brand-bg-secondary/[0.02] hidden xl:block uppercase tracking-[0.1em]">
-        NTB
+        NTOMBIS
       </div>
 
       <div className="max-w-4xl mx-auto px-6 md:px-8 relative flex flex-col items-center text-center">
@@ -34,7 +34,7 @@ export const BrandStatement: React.FC = () => {
 
         {/* Detailed Copy */}
         <p className="font-serif text-lg sm:text-xl lg:text-2xl font-light text-brand-bg-secondary/80 leading-relaxed max-w-3xl mb-8">
-          Every NTB garment begins with the person, the occasion, and the story behind it. From cultural ceremonies to once-in-a-lifetime celebrations, we design pieces that feel personal, refined, and unforgettable.
+          Every Ntombis garment begins with the person, the occasion, and the story behind it. From cultural ceremonies to once-in-a-lifetime celebrations, we design pieces that feel personal, refined, and unforgettable.
         </p>
 
         {/* Differentiator Subtext */}

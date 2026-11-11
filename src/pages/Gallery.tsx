@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { whatsappUrl } from "../data/brand";
+import React, { useState } from "react";
 import { X, Search } from "lucide-react";
 import SectionHeader from "../components/ui/SectionHeader";
 import ImageCard from "../components/ui/ImageCard";
@@ -10,9 +11,6 @@ export const Gallery: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
-  useEffect(() => {
-    document.title = "Our Gallery | NTB Fashions";
-  }, []);
 
   // Filter items
   const filteredItems = activeFilter === "all"
@@ -34,6 +32,7 @@ export const Gallery: React.FC = () => {
       <section className="py-16 border-b border-brand-gold/10 bg-brand-bg-secondary/10">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <SectionHeader
+            as="h1"
             title="Bespoke Portfolio"
             subtitle="Proof of Craftsmanship"
             description="Explore our gallery of actual client commissions, wedding attire, traditional ceremony sets, and custom gowns designed in our South African workshop."
@@ -152,7 +151,7 @@ export const Gallery: React.FC = () => {
                   Interested in a similar bespoke garment? Book a design call.
                 </p>
                 <a
-                  href={`https://wa.me/27000000000?text=Hi%20Ntombis%20Fashions,%20I'd%20like%20to%20enquire%20about%20the%20style:%20${encodeURIComponent(selectedItem.title)}`}
+                  href={whatsappUrl(`Hi Ntombis Fashion, I'd like to enquire about the style: ${selectedItem.title}`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full text-center inline-flex items-center justify-center gap-2 font-sans uppercase text-[10px] font-bold tracking-[0.2em] py-3.5 border border-brand-gold text-brand-gold bg-transparent hover:bg-brand-gold hover:text-brand-black transition-colors"

@@ -78,13 +78,13 @@ export const LogoMark: React.FC<LogoMarkProps> = ({
             className="font-serif font-bold text-lg tracking-[0.2em] transition-colors"
             style={{ color: primaryColor }}
           >
-            NTB
+            NTOMBIS
           </span>
           <span
             className="font-sans text-[9px] font-semibold tracking-[0.35em] uppercase"
             style={{ color: accentColor }}
           >
-            Fashions
+            Fashion
           </span>
         </div>
       )}

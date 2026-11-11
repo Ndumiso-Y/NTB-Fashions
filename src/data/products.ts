@@ -2,7 +2,7 @@
  * FUTURE E-COMMERCE PRODUCTS DATA ARCHITECTURE
  * 
  * This file sets up the TypeScript interfaces and scaffolding for the e-commerce expansion.
- * To adhere to NTB Fashions / Ntombis brand integrity:
+ * To adhere to Ntombis Fashion / Ntombis brand integrity:
  * - We DO NOT render fake prices in the UI.
  * - We DO NOT implement a mock checkout / cart flow now.
  * - These data models are prepared so they can be easily linked to a Shopify, WooCommerce, 
@@ -35,7 +35,7 @@ export interface Product {
   sizes?: ProductSize[];
   
   // Customization Options:
-  // Since NTB is a bespoke brand, ready-to-wear pieces will also support custom sizing.
+  // Since Ntombis is a bespoke brand, ready-to-wear pieces will also support custom sizing.
   customFittingAvailable: boolean;
   
   // Inventory Control:

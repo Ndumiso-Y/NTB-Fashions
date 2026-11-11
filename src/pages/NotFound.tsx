@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ArrowLeft } from "lucide-react";
 import Button from "../components/ui/Button";
 
 export const NotFound: React.FC = () => {
-  useEffect(() => {
-    document.title = "Page Not Found | NTB Fashions";
-  }, []);
 
   return (
     <div className="min-h-screen bg-brand-bg flex items-center justify-center pt-24 pb-16 px-6 relative overflow-hidden">

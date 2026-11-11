@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SectionHeader from "../components/ui/SectionHeader";
 import Button from "../components/ui/Button";
 
 export const Process: React.FC = () => {
-  useEffect(() => {
-    document.title = "Our Custom Process | NTB Fashions";
-  }, []);
 
   const detailedSteps = [
     {
@@ -56,6 +53,7 @@ export const Process: React.FC = () => {
       <section className="py-16 border-b border-brand-gold/10 bg-brand-bg-secondary/10">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <SectionHeader
+            as="h1"
             title="The Art of Custom Tailoring"
             subtitle="Our Custom Process"
             description="From initial sketch to the final steam, learn how we craft garments tailored exclusively around you."

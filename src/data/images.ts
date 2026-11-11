@@ -7,20 +7,20 @@ export interface ImageAsset {
 
 export const generatedImages = {
   hero: {
-    src: "/images/ntb/generated/hero-image.png",
-    alt: "African-inspired bespoke fashion garment by NTB Fashions",
+    src: "/images/ntb/generated/hero-image.webp",
+    alt: "African-inspired bespoke fashion garment by Ntombis Fashion",
   },
   weddingGroom: {
-    src: "/images/ntb/generated/wedding-groom-visual.png",
-    alt: "Custom groom suit with African-inspired detailing by NTB Fashions",
+    src: "/images/ntb/generated/wedding-groom-visual.webp",
+    alt: "Custom groom suit with African-inspired detailing by Ntombis Fashion",
   },
   matricDance: {
-    src: "/images/ntb/generated/matric-dance-dress-visual.png",
+    src: "/images/ntb/generated/matric-dance-dress-visual.webp",
     alt: "Custom matric dance dress designed for a premium special occasion",
   },
   traditionalWear: {
-    src: "/images/ntb/generated/traditional-wear-visual.png",
-    alt: "Modern African-inspired traditional attire by NTB Fashions",
+    src: "/images/ntb/generated/traditional-wear-visual.webp",
+    alt: "Modern African-inspired traditional attire by Ntombis Fashion",
   },
 };
 

@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import SectionHeader from "../components/ui/SectionHeader";
 import Button from "../components/ui/Button";
 import { garmentImages } from "../data/images";
 
 export const About: React.FC = () => {
-  useEffect(() => {
-    document.title = "Our Story | NTB Fashions";
-  }, []);
 
   return (
     <div className="pt-24 bg-brand-bg">
@@ -14,7 +11,7 @@ export const About: React.FC = () => {
       <section className="py-16 md:py-24 border-b border-brand-gold/10 bg-brand-bg-secondary/20">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="max-w-3xl">
-            <span className="subtitle-editorial mb-3">About NTB Fashions</span>
+            <span className="subtitle-editorial mb-3">About Ntombis Fashion</span>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-brand-black leading-tight mb-6">
               Identity, Culture & <br />
               <span className="text-gradient-gold italic font-normal">Bespoke Elegance</span>
@@ -35,7 +32,7 @@ export const About: React.FC = () => {
             <div className="absolute inset-4 border border-brand-gold/30 -z-10 translate-x-2.5 translate-y-2.5" />
             <img
               src={garmentImages.traditionalDress.src}
-              alt="Tailoring details of a custom traditional garment by NTB Fashions"
+              alt="Tailoring details of a custom traditional garment by Ntombis Fashion"
               className="w-full h-full object-cover"
             />
           </div>
@@ -49,7 +46,7 @@ export const About: React.FC = () => {
             <div className="w-16 h-[2px] bg-brand-gold/50 my-2" />
 
             <p>
-              NTB Fashions (publicly known as <strong>Ntombis</strong>) is a premium South African fashion house specializing in custom clothing and bespoke occasion wear. Rooted in South Africa, we combine modern styling with African heritage accents and meticulous custom tailoring.
+              <strong>Ntombis Fashion</strong> (also known as Ntombis Fashion) is a premium South African fashion house specializing in custom clothing and bespoke occasion wear. Rooted in South Africa, we combine modern styling with African heritage accents and meticulous custom tailoring.
             </p>
             
             <p>
@@ -75,7 +72,7 @@ export const About: React.FC = () => {
             Bespoke Quality, Personal Legacy
           </h2>
           <p className="font-serif text-lg md:text-xl font-light text-brand-bg-secondary/80 leading-relaxed mb-8 max-w-3xl">
-            Our long-term vision is to establish NTB Fashions as a recognized luxury African brand. We value the connection between the tailor and the wearer, ensuring that each garment fits perfectly and stands out with exclusivity.
+            Our long-term vision is to establish Ntombis Fashion as a recognized luxury African brand. We value the connection between the tailor and the wearer, ensuring that each garment fits perfectly and stands out with exclusivity.
           </p>
           <Button to="/contact" variant="gold">
             Book an Appointment

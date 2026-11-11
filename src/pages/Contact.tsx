@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { Mail, MessageSquare, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import SectionHeader from "../components/ui/SectionHeader";
 import Button from "../components/ui/Button";
-import { brandDetails } from "../data/brand";
+import { brandDetails, whatsappUrl } from "../data/brand";
 
 interface FormState {
   name: string;
@@ -36,7 +36,6 @@ export const Contact: React.FC = () => {
 
   // Pre-populate dropdowns from query parameters if redirected
   useEffect(() => {
-    document.title = "Book a Consultation | NTB Fashions";
     
     const occasionParam = searchParams.get("occasion");
     const collectionParam = searchParams.get("collection");
@@ -80,15 +79,28 @@ export const Contact: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const buildWhatsappMessage = () =>
+    [
+      "Hi Ntombis Fashion, I'd like to book a consultation.",
+      `Name: ${formData.name}`,
+      `Phone: ${formData.phone}`,
+      `Email: ${formData.email}`,
+      `Occasion: ${formData.occasionType}`,
+      `Garment: ${formData.garmentType}`,
+      `Event date: ${formData.eventDate}`,
+      formData.budgetRange && `Budget: ${formData.budgetRange}`,
+      `Preferred contact: ${formData.contactMethod}`,
+      formData.message && `Message: ${formData.message}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
-    // API INTEGRATION POINT:
-    // This is where you would link Axios or Fetch to post your formData to the email server/CMS.
-    // Example:
-    // fetch('/api/book-consultation', { method: 'POST', body: JSON.stringify(formData) })
-    
+    // The site has no server, so the request is sent through WhatsApp with the details filled in.
+    window.open(whatsappUrl(buildWhatsappMessage()), "_blank", "noopener");
     setIsSubmitted(true);
     setErrors({});
   };
@@ -99,9 +111,10 @@ export const Contact: React.FC = () => {
       <section className="py-16 border-b border-brand-gold/10 bg-brand-bg-secondary/10">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <SectionHeader
+            as="h1"
             title="Book a Consultation"
             subtitle="Custom Garment Journey"
-            description="Our studio is based in South Africa. Schedule a fitting, fabric selection session, or request a general enquiry."
+            description="Our studio is at 121 President Mbeki Drive, Rustenburg. Schedule a fitting, fabric selection session, or request a general enquiry."
             align="left"
             className="!mb-0"
           />
@@ -117,21 +130,21 @@ export const Contact: React.FC = () => {
             {isSubmitted ? (
               <div className="py-12 flex flex-col items-center justify-center text-center max-w-md mx-auto animate-fade-in-simple">
                 <CheckCircle size={56} className="text-brand-gold mb-6" />
-                <h3 className="font-serif text-2xl text-brand-black mb-3">Consultation Requested</h3>
+                <h3 className="font-serif text-2xl text-brand-black mb-3">Almost done</h3>
                 <p className="font-sans text-brand-muted text-sm leading-relaxed mb-8">
-                  Thank you, <strong>{formData.name}</strong>. We have received your booking details for the approximate date of <strong>{formData.eventDate}</strong>. A designer from NTB Fashions will contact you within 24 hours.
+                  Thank you, <strong>{formData.name}</strong>. WhatsApp has opened with your details filled in. Press <strong>send</strong> in WhatsApp to complete your request.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 w-full">
                   <Button onClick={() => setIsSubmitted(false)} variant="secondary" className="w-full">
                     Request Another
                   </Button>
                   <a
-                    href={brandDetails.contact.whatsappLink}
+                    href={whatsappUrl(buildWhatsappMessage())}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 font-sans uppercase text-xs font-semibold tracking-[0.2em] px-4 py-4 border border-brand-black text-brand-bg bg-brand-black hover:bg-brand-gold hover:border-brand-gold hover:text-brand-black transition-all duration-300"
                   >
-                    WhatsApp Backup
+                    Open WhatsApp again
                   </a>
                 </div>
               </div>
@@ -344,7 +357,7 @@ export const Contact: React.FC = () => {
               </a>
             </div>
 
-            {/* Placeholder Studio Coordinates */}
+            {/* Studio Coordinates */}
             <div className="border border-brand-gold/15 p-8 bg-brand-bg text-start flex flex-col gap-6">
               <h4 className="font-serif text-lg text-brand-black border-b border-brand-gold/15 pb-3">
                 Studio Details
@@ -354,8 +367,8 @@ export const Contact: React.FC = () => {
                 <Mail size={16} className="text-brand-gold shrink-0 mt-0.5" />
                 <div className="flex flex-col">
                   <span className="font-bold text-brand-black text-xs uppercase tracking-wider mb-1">Email Enquiry</span>
-                  <a href={`mailto:${brandDetails.contact.emailPlaceholder}`} className="hover:text-brand-gold transition-colors break-all">
-                    {brandDetails.contact.emailPlaceholder}
+                  <a href={`mailto:${brandDetails.contact.email}`} className="hover:text-brand-gold transition-colors break-all">
+                    {brandDetails.contact.email}
                   </a>
                 </div>
               </div>
@@ -364,7 +377,8 @@ export const Contact: React.FC = () => {
                 <MapPin size={16} className="text-brand-gold shrink-0 mt-0.5" />
                 <div className="flex flex-col">
                   <span className="font-bold text-brand-black text-xs uppercase tracking-wider mb-1">Studio Location</span>
-                  <span>South Africa</span>
+                  <address className="not-italic">{brandDetails.contact.street}<br />{brandDetails.contact.city}, {brandDetails.contact.province}, {brandDetails.contact.postcode}</address>
+                  <a href={`tel:${brandDetails.contact.phoneIntl}`} className="hover:text-brand-gold transition-colors mt-1">{brandDetails.contact.phoneDisplay}</a>
                 </div>
               </div>
 
@@ -372,9 +386,9 @@ export const Contact: React.FC = () => {
                 <Clock size={16} className="text-brand-gold shrink-0 mt-0.5" />
                 <div className="flex flex-col">
                   <span className="font-bold text-brand-black text-xs uppercase tracking-wider mb-1">Fittings Schedule</span>
-                  <span>Mon – Fri: 09:00 – 17:00</span>
-                  <span>Saturday: 09:00 – 13:00</span>
-                  <span className="text-[10px] text-brand-gold mt-1">Appointments strictly required</span>
+                  {brandDetails.contact.hours.map((h) => (
+                    <span key={h.days}>{h.days}: {h.time}</span>
+                  ))}
                 </div>
               </div>
             </div>
