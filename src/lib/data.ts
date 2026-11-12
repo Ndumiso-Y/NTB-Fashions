@@ -9,10 +9,15 @@ export const brand = {
     phone: "+27 72 3400 477",
     email: "info@ntombis.com",
     address: "121 President Mbeki Dr, Rustenburg, North West",
+    postalCode: "0299",
+    /** Matches the Google Business Profile and Facebook page. */
+    hours: [
+      { days: "Monday – Friday", time: "09:00 – 17:00" },
+      { days: "Saturday", time: "09:00 – 14:00" },
+      { days: "Sunday", time: "Closed" },
+    ],
     socials: {
-      instagram: "#",
-      facebook: "#",
-      tiktok: "#",
+      facebook: "https://www.facebook.com/ntombisfashion",
     },
   },
 };

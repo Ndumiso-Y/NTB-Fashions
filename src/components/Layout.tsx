@@ -216,14 +216,28 @@ export function Footer() {
         </div>
         <div>
           <h4 className="text-sm uppercase tracking-widest mb-6">Connect</h4>
-          <p className="text-[10px] text-brand-cream/60 mb-3 tracking-widest uppercase">Coming Soon:</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-3 mb-8 text-xs uppercase tracking-widest font-medium text-brand-cream/60">
-            <span className="cursor-not-allowed">Instagram</span>
-            <span className="cursor-not-allowed">TikTok</span>
-            <span className="cursor-not-allowed">Facebook</span>
+          <div className="flex flex-wrap gap-x-6 gap-y-3 mb-3 text-xs uppercase tracking-widest font-medium">
+            <a
+              href={brand.contact.socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer me"
+              className="text-brand-cream/80 hover:text-brand-cream transition-colors"
+            >
+              Facebook
+            </a>
           </div>
+          <p className="text-[10px] text-brand-cream/60 mb-8 tracking-widest uppercase">Instagram &amp; TikTok coming soon</p>
           <h4 className="text-[10px] text-brand-cream/60 mb-2 tracking-widest uppercase">Visit Us</h4>
-          <p className="text-sm text-brand-cream/70 mb-4">{brand.contact.address}</p>
+          <p className="text-sm text-brand-cream/70 mb-2">
+            {brand.contact.address}, {brand.contact.postalCode}
+          </p>
+          <ul className="text-sm text-brand-cream/70 mb-4 space-y-0.5">
+            {brand.contact.hours.map((h) => (
+              <li key={h.days}>
+                {h.days}: {h.time}
+              </li>
+            ))}
+          </ul>
           <p className="text-sm text-brand-cream/70 mb-1">
             <a
               href={`tel:${brand.contact.phone.replace(/\s+/g, '')}`}

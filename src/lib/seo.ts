@@ -93,8 +93,9 @@ export function pageHead({ path, title, description }: { path: PublicPath | Util
 
 /**
  * Site-wide entity data. Every value below is taken from information already
- * visible on the site (brand data, footer, About page). Nothing unverified —
- * opening hours, prices, ratings, postal code, social profiles — is included.
+ * visible on the site (brand data, footer, About page). Postal code, opening
+ * hours and the Facebook page were confirmed by the owner in November 2026 and
+ * match the Google Business Profile. Prices and ratings are not included.
  */
 export function organizationJsonLd(): string {
   return jsonLd({
@@ -124,8 +125,19 @@ export function organizationJsonLd(): string {
           streetAddress: "121 President Mbeki Dr",
           addressLocality: "Rustenburg",
           addressRegion: "North West",
+          postalCode: brand.contact.postalCode,
           addressCountry: "ZA",
         },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "17:00",
+          },
+          { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "14:00" },
+        ],
+        sameAs: [brand.contact.socials.facebook],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Custom garment services",

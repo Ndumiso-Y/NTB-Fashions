@@ -493,10 +493,17 @@ function Contact() {
               
               <div className="space-y-4">
                 <h3 className="text-[10px] uppercase tracking-widest text-brand-green/70">Follow our journey</h3>
-                <div className="flex flex-col space-y-2 text-sm text-brand-green/70 cursor-not-allowed">
+                <div className="flex flex-col space-y-2 text-sm text-brand-green/70">
+                   <a
+                     href={brand.contact.socials.facebook}
+                     target="_blank"
+                     rel="noopener noreferrer me"
+                     className="text-brand-green hover:underline"
+                   >
+                     Facebook: facebook.com/ntombisfashion
+                   </a>
                    <span>Instagram (Coming Soon)</span>
                    <span>TikTok (Coming Soon)</span>
-                   <span>Facebook (Coming Soon)</span>
                 </div>
               </div>
 
@@ -524,7 +531,16 @@ function Contact() {
 
               <div className="space-y-4 pt-4">
                 <h3 className="text-[10px] uppercase tracking-widest text-brand-green/70">Visit Our Studio</h3>
-                <p className="text-sm text-brand-green/80">{brand.contact.address}</p>
+                <p className="text-sm text-brand-green/80">
+                  {brand.contact.address}, {brand.contact.postalCode}
+                </p>
+                <ul className="text-sm text-brand-green/80 space-y-0.5">
+                  {brand.contact.hours.map((h) => (
+                    <li key={h.days}>
+                      {h.days}: {h.time}
+                    </li>
+                  ))}
+                </ul>
                 <div className="w-full h-48 bg-brand-green/10 mt-4 relative overflow-hidden">
                   <iframe
                     title={`Map showing the Ntombis Fashion studio at ${brand.contact.address}`}
